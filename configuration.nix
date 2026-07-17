@@ -15,7 +15,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_7_1;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -83,11 +83,29 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # ajouter ici des libs
+  ];
+
+  programs.zsh = {
+    enable = true;
+    enableSyntaxHighlighting = true;
+    autosuggestions.enable = true;
+    shellAliases = {
+      ns = "nix-shell";
+      c = "clear";
+    };
+  };
+
+  programs.starship.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."viiper" = {
     isNormalUser = true;
     description = "ViipeR";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -101,6 +119,11 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  services.udev.packages = with pkgs; [
+    solaar
+    headsetcontrol
+  ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -111,15 +134,54 @@
     vlc
     discord
     spotify
+    protonup-qt
+    heroic
     gnome-extension-manager
     gnomeExtensions.dash-to-dock
+    mangohud
+    gamemode
+    goverlay
+    eza
+    bat
+    nil
+    nixd
+    go
+    gopls
+    gotools
+    brave
+    solaar
+    gnomeExtensions.appindicator
+    headsetcontrol
+    gnomeExtensions.headsetcontrol
   ];
+
+  services.flatpak.enable = true;
 
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    silent = true;
+  };
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
+
+  services.libinput = {
+    enable = true;
+    mouse = {
+      additionalOptions = ''
+        Option "ScrollFactor" "2.5"
+      '';
+    };
+  };
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

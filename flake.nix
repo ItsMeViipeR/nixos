@@ -2,7 +2,7 @@
   description = "NixOS 26.05 stable";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
