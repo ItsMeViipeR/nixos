@@ -133,7 +133,7 @@
     zed-editor
     vlc
     discord
-    spotify
+#    spotify
     protonup-qt
     heroic
     gnome-extension-manager
