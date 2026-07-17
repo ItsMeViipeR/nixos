@@ -145,7 +145,7 @@
     bat
     nil
     nixd
-    go
+#    go
     gopls
     gotools
     brave
