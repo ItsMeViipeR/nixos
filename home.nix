@@ -27,14 +27,14 @@
         percent = { type = 2; };
       };
       modules = [
-        { type = "title"; key = " 🚀 fastfetch"; keyColor = "orange"; }
-        { type = "os"; key = " ├── 🐧 Linux"; keyColor = "orange"; }
-        { type = "kernel"; key = " ├── ⚙️  Kernel"; keyColor = "orange"; }
-        { type = "shell"; key = " ├── 🐚 Shell"; keyColor = "orange"; }
-        { type = "terminal"; key = " ├── 💻 Terminal"; keyColor = "orange"; }
-        { type = "packages"; key = " └── 📦 Packages"; keyColor = "orange"; }
+        { type = "title"; key = " 🚀 fastfetch"; keyColor = "yellow"; }
+        { type = "os"; key = " ├── 🐧 Linux"; keyColor = "yellow"; }
+        { type = "kernel"; key = " ├── ⚙️  Kernel"; keyColor = "yellow"; }
+        { type = "shell"; key = " ├── 🐚 Shell"; keyColor = "yellow"; }
+        { type = "terminal"; key = " ├── 💻 Terminal"; keyColor = "yellow"; }
+        { type = "packages"; key = " └── 📦 Packages"; keyColor = "yellow"; }
         "break"
-        { type = "custom"; format = "🛠️  Hardware"; outputColor = "blue"; }
+        { type = "custom"; format = "🛠️  Hardware"; outputColor = "yellow"; }
         { type = "cpu"; key = " ├── 🧠 CPU"; keyColor = "blue"; }
         { type = "gpu"; key = " ├── 🎮 GPU"; keyColor = "blue"; }
         { type = "display"; key = " ├── 📺 Display"; keyColor = "blue"; }
