@@ -18,7 +18,8 @@
         padding = { right = 4; };
       };
       display = {
-        separator = "  			➔  ";
+        separator = "  		➔  ";
+	keyWidth = 22;
         bar = {
           "char.elapsed" = "▬";
           "char.total" = "─";
