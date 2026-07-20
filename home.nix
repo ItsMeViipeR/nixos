@@ -18,16 +18,14 @@
         padding = { right = 4; };
       };
       display = {
-	separator = " ➔  ";
+        type = "unicode"; # <- LA MAGIE EST ICI (calcule correctement la taille des icônes)
+        separator = "  ➔  ";
         bar = {
           "char.elapsed" = "▬";
           "char.total" = "─";
           width = 12;
         };
         percent = { type = 2; };
-	key = {
-          width = 19; # On encapsule proprement la largeur ici
-        };
       };
       modules = [
         { type = "title"; key = " 🚀 fastfetch"; keyColor = "yellow"; }
@@ -38,19 +36,19 @@
         { type = "packages"; key = " └── 📦 Packages"; keyColor = "yellow"; }
         "break"
         { type = "custom"; key = " 🛠️  Hardware"; format = ""; keyColor = "blue"; }
-        { type = "cpu"; key = " ├── 🧠 CPU       "; keyColor = "blue"; }
-        { type = "gpu"; key = " ├── 🎮 GPU       "; keyColor = "blue"; }
-        { type = "display"; key = " ├── 📺 Display   "; keyColor = "blue"; }
-        { type = "memory"; key = " ├── 📊 RAM       "; keyColor = "blue"; }
-        { type = "disk"; key = " ├── 💾 Disk      "; keyColor = "blue"; }
-        { type = "disk"; key = " └── 💾 Disk      "; keyColor = "blue"; }
+        { type = "cpu"; key = " ├── 🧠 CPU"; keyColor = "blue"; }
+        { type = "gpu"; key = " ├── 🎮 GPU"; keyColor = "blue"; }
+        { type = "display"; key = " ├── 📺 Display"; keyColor = "blue"; }
+        { type = "memory"; key = " ├── 📊 RAM"; keyColor = "blue"; }
+        { type = "disk"; key = " ├── 💾 Disk"; keyColor = "blue"; }
+        { type = "disk"; key = " └── 💾 Disk"; keyColor = "blue"; }
         "break"
         { type = "custom"; key = " 🌐 Network"; format = ""; keyColor = "cyan"; }
-        { type = "localip"; key = " ├── 󰩟  Local IP  "; keyColor = "cyan"; showIpv4 = true; showIpv6 = false; }
-        { type = "dns"; key = " └── 󰒋  DNS       "; keyColor = "cyan"; }
+        { type = "localip"; key = " ├── 󰩟  Local IP"; keyColor = "cyan"; showIpv4 = true; showIpv6 = false; }
+        { type = "dns"; key = " └── 󰒋  DNS"; keyColor = "cyan"; }
         "break"
         { type = "custom"; key = " 🦫 Development"; format = ""; keyColor = "magenta"; }
-        { type = "uptime"; key = " └── 󰔚  Uptime    "; keyColor = "magenta"; }
+        { type = "uptime"; key = " └── 󰔚  Uptime"; keyColor = "magenta"; }
         "break"
         "colors"
       ];
