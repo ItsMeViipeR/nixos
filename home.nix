@@ -18,7 +18,6 @@
         padding = { right = 4; };
       };
       display = {
-        type = "unicode"; # <- LA MAGIE EST ICI (calcule correctement la taille des icônes)
         separator = "  ➔  ";
         bar = {
           "char.elapsed" = "▬";
