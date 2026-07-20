@@ -35,19 +35,19 @@
         { type = "packages"; key = " └── 📦 Packages"; keyColor = "yellow"; }
         "break"
         { type = "custom"; key = " 🛠️  Hardware"; format = ""; keyColor = "blue"; }
-        { type = "cpu"; key = " ├── 🧠 CPU"; keyColor = "blue"; }
-        { type = "gpu"; key = " ├── 🎮 GPU"; keyColor = "blue"; }
-        { type = "display"; key = " ├── 📺 Display"; keyColor = "blue"; }
-        { type = "memory"; key = " ├── 📊 RAM"; keyColor = "blue"; }
-        { type = "disk"; key = " ├── 💾 Disk"; keyColor = "blue"; }
-        { type = "disk"; key = " └── 💾 Disk"; keyColor = "blue"; }
+        { type = "cpu"; key = " ├── 🧠 CPU       "; keyColor = "blue"; }
+        { type = "gpu"; key = " ├── 🎮 GPU       "; keyColor = "blue"; }
+        { type = "display"; key = " ├── 📺 Display   "; keyColor = "blue"; }
+        { type = "memory"; key = " ├── 📊 RAM       "; keyColor = "blue"; }
+        { type = "disk"; key = " ├── 💾 Disk      "; keyColor = "blue"; }
+        { type = "disk"; key = " └── 💾 Disk      "; keyColor = "blue"; }
         "break"
         { type = "custom"; key = " 🌐 Network"; format = ""; keyColor = "cyan"; }
-        { type = "localip"; key = " ├── 󰩟  Local IP"; keyColor = "cyan"; showIpv4 = true; showIpv6 = false; }
-        { type = "dns"; key = " └── 󰒋  DNS"; keyColor = "cyan"; }
+        { type = "custom"; key = " ├── 󰩟  Local IP  "; format = "{#1}{11}"; keyColor = "cyan"; } # Force brute via format global
+        { type = "dns"; key = " └── 󰒋  DNS       "; keyColor = "cyan"; }
         "break"
         { type = "custom"; key = " 🦫 Development"; format = ""; keyColor = "magenta"; }
-        { type = "uptime"; key = " └── 󰔚  Uptime"; keyColor = "magenta"; }
+        { type = "uptime"; key = " └── 󰔚  Uptime    "; keyColor = "magenta"; }
         "break"
         "colors"
       ];
