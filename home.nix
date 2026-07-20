@@ -40,7 +40,6 @@
         { type = "display"; key = " ├── 📺 Display   "; keyColor = "blue"; }
         { type = "memory"; key = " ├── 📊 RAM       "; keyColor = "blue"; }
         { type = "disk"; key = " ├── 💾 Disk      "; keyColor = "blue"; }
-        { type = "disk"; key = " └── 💾 Disk      "; keyColor = "blue"; }
         "break"
         { type = "custom"; key = " 🌐 Network"; format = ""; keyColor = "cyan"; }
         { type = "custom"; key = " ├── 󰩟  Local IP  "; format = "{#1}{11}"; keyColor = "cyan"; } # Force brute via format global
