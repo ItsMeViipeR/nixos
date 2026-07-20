@@ -20,8 +20,8 @@
       display = {
         separator = "  ➔  ";
         bar = {
-          charElapsed = "▬";
-          charTotal = "─";
+          "char.elapsed" = "▬";
+          "char.total" = "─";
           width = 12;
         };
         percent = { type = 2; };
