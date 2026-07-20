@@ -18,7 +18,7 @@
         padding = { right = 4; };
       };
       display = {
-	separator = "  ➔  ";
+	separator = " ➔  ";
         bar = {
           "char.elapsed" = "▬";
           "char.total" = "─";
