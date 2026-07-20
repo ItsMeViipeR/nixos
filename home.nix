@@ -34,13 +34,22 @@
         { type = "terminal"; key = " ├── 💻 Terminal"; keyColor = "yellow"; }
         { type = "packages"; key = " └── 📦 Packages"; keyColor = "yellow"; }
         "break"
-        { type = "custom"; format = "🛠️  Hardware"; outputColor = "yellow"; }
+        { type = "custom"; format = "🛠️  Hardware"; outputColor = "blue"; }
         { type = "cpu"; key = " ├── 🧠 CPU"; keyColor = "blue"; }
         { type = "gpu"; key = " ├── 🎮 GPU"; keyColor = "blue"; }
         { type = "display"; key = " ├── 📺 Display"; keyColor = "blue"; }
         { type = "memory"; key = " ├── 📊 RAM"; keyColor = "blue"; }
         { type = "disk"; key = " └── 💾 Disk"; keyColor = "blue"; }
         "break"
+	{ type = "custom"; format = " 🌐 Network"; outputColor = "cyan";}
+	{ type = "localip"; key = " ├── 󰩟  Local IP"; keyColor = "cyan"; showIpv4 = true; showIpv6 = false; }
+	{ type = "dns"; key = " └── 󰒋 DNS"; keyColor = "cyan";}
+	"break"
+	{ type = "custom"; key = " 📦 Environment"; format = ""; keyColor = "red"; }
+	{ type = "disk"; key = " ├── 󰋊  Disk (/)"; keyColor = "red"; folders = "/"; }
+	{ type = "packages"; key = " ├── 󰏖  Packages"; keyColor = "red"; nix = true; } # Compte tes paquets Nix
+	{ type = "uptime"; key = " └── 󰔚  Uptime"; keyColor = "red"; }
+	"break"
         "colors"
       ];
     };
