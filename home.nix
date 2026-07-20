@@ -18,14 +18,16 @@
         padding = { right = 4; };
       };
       display = {
-        separator = "  		➔  ";
-	keyWidth = 22;
+	separator = "  ➔  ";
         bar = {
           "char.elapsed" = "▬";
           "char.total" = "─";
           width = 12;
         };
         percent = { type = 2; };
+	key = {
+	  width = 22;
+	};
       };
       modules = [
       	{ type = "title"; key = " 🚀 fastfetch"; keyColor = "yellow"; }
