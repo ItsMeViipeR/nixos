@@ -19,15 +19,13 @@
       };
       display = {
 	separator = "  ➔  ";
+	"key.width" = 20;
         bar = {
           "char.elapsed" = "▬";
           "char.total" = "─";
           width = 12;
         };
         percent = { type = 2; };
-	key = {
-	  width = 22;
-	};
       };
       modules = [
       	{ type = "title"; key = " 🚀 fastfetch"; keyColor = "yellow"; }
