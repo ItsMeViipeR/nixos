@@ -88,6 +88,13 @@
     # ajouter ici des libs
   ];
 
+  nix.settings.auto-optimise-store = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-then 7d";
+  };
+
   programs.zsh = {
     enable = true;
     enableSyntaxHighlighting = true;
