@@ -15,8 +15,7 @@
         padding = { right = 4; };
       };
       display = {
-        # On désactive le séparateur automatique car on va l'intégrer proprement
-        separator = ""; 
+        separator = " ➔ ";
         bar = {
           "char.elapsed" = "▬";
           "char.total" = "─";
@@ -25,34 +24,34 @@
         percent = { type = 2; };
       };
       modules = [
-        # SECTION TITLE / OS
-        { type = "title"; format = " 🚀 fastfetch   ➔ {user-name}@{host-name}"; keyColor = "yellow"; }
-        { type = "os"; format = " ├── 🐧 Linux   ➔ {sys-name} {release} {architecture}"; keyColor = "yellow"; }
-        { type = "kernel"; format = " ├── ⚙️  Kernel  ➔ {release}"; keyColor = "yellow"; }
-        { type = "shell"; format = " ├── 🐚 Shell   ➔ {name} {version}"; keyColor = "yellow"; }
-        { type = "terminal"; format = " ├── 💻 Terminal➔ {pretty-name}"; keyColor = "yellow"; }
-        { type = "packages"; format = " └── 📦 Packages➔ {all}"; keyColor = "yellow"; }
+        # SYSTEM (Les clés avec 🐧/⚙️ prennent peu d'octets)
+        { type = "title"; key = " 🚀 fastfetch       "; keyColor = "yellow"; }
+        { type = "os"; key = " ├── 🐧 Linux       "; keyColor = "yellow"; format = "{3} {12}"; }
+        { type = "kernel"; key = " ├── ⚙️  Kernel      "; keyColor = "yellow"; }
+        { type = "shell"; key = " ├── 🐚 Shell       "; keyColor = "yellow"; }
+        { type = "terminal"; key = " ├── 💻 Terminal    "; keyColor = "yellow"; }
+        { type = "packages"; key = " └── 📦 Packages    "; keyColor = "yellow"; }
         "break"
-        
-        # SECTION HARDWARE
-        { type = "custom"; format = " 🛠️  Hardware"; keyColor = "blue"; }
-        { type = "cpu"; format = " ├── 🧠 CPU      ➔ {name}"; keyColor = "blue"; }
-        { type = "gpu"; format = " ├── 🎮 GPU      ➔ {name}"; keyColor = "blue"; }
-        { type = "display"; format = " ├── 📺 Display  ➔ {width}x{height} in {physical-width}\", {refresh-rate} Hz"; keyColor = "blue"; }
-        { type = "memory"; format = " ├── 📊 RAM      ➔ {}"; keyColor = "blue"; }
-        { type = "disk"; format = " ├── 💾 Disk     ➔ {}"; keyColor = "blue"; folders = "/"; }
-        { type = "disk"; format = " └── 💾 Disk     ➔ {}"; keyColor = "blue"; folders = "/home"; } # Ajuste ton second point de montage si besoin
+
+        # HARDWARE (Les emojis 🧠/🎮/📺 font 4 octets UTF-8, on retire 1 ou 2 espaces pour compenser)
+        { type = "custom"; key = " 🛠️  Hardware"; keyColor = "blue"; }
+        { type = "cpu"; key = " ├── 🧠 CPU         "; keyColor = "blue"; format = "{1}"; }
+        { type = "gpu"; key = " ├── 🎮 GPU         "; keyColor = "blue"; format = "{2}"; }
+        { type = "display"; key = " ├── 📺 Display     "; keyColor = "blue"; format = "{1}x{2} in {3}\", {11} Hz"; }
+        { type = "memory"; key = " ├── 📊 RAM         "; keyColor = "blue"; }
+        { type = "disk"; key = " ├── 💾 Disk        "; keyColor = "blue"; folders = "/"; }
+        { type = "disk"; key = " └── 💾 Disk        "; keyColor = "blue"; folders = "/home"; }
         "break"
-        
-        # SECTION NETWORK
-        { type = "custom"; format = " 🌐 Network"; keyColor = "cyan"; }
-        { type = "localip"; format = " ├── 󰩟  Local IP ➔ {ipv4}"; keyColor = "cyan"; }
-        { type = "dns"; format = " └── 󰒋  DNS      ➔ {1}"; keyColor = "cyan"; }
+
+        # NETWORK (L'icône NerdFont 󰩟 prend aussi plus d'octets)
+        { type = "custom"; key = " 🌐 Network"; keyColor = "cyan"; }
+        { type = "localip"; key = " ├── 󰩟  Local IP    "; keyColor = "cyan"; showIpv4 = true; showIpv6 = false; }
+        { type = "dns"; key = " └── 󰒋  DNS         "; keyColor = "cyan"; }
         "break"
-        
-        # SECTION DEVELOPMENT
-        { type = "custom"; format = " 🦫 Development"; keyColor = "magenta"; }
-        { type = "uptime"; format = " └── 󰔚  Uptime   ➔ {pretty}"; keyColor = "magenta"; }
+
+        # DEVELOPMENT
+        { type = "custom"; key = " 🦫 Development"; keyColor = "magenta"; }
+        { type = "uptime"; key = " └── 󰔚  Uptime      "; keyColor = "magenta"; }
         "break"
         "colors"
       ];
