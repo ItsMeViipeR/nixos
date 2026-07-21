@@ -34,7 +34,7 @@
         "break"
 
         # HARDWARE (Les emojis 🧠/🎮/📺 font 4 octets UTF-8, on retire 1 ou 2 espaces pour compenser)
-        { type = "custom"; key = " 🛠️  Hardware"; keyColor = "blue"; }
+        { type = "custom"; format = " 🛠️  Hardware"; outputColor = "blue"; }
         { type = "cpu"; key = " ├── 🧠 CPU         "; keyColor = "blue"; format = "{1}"; }
         { type = "gpu"; key = " ├── 🎮 GPU         "; keyColor = "blue"; format = "{2}"; }
         { type = "display"; key = " ├── 📺 Display     "; keyColor = "blue"; format = "{1}x{2} in {3}\", {11} Hz"; }
@@ -44,13 +44,13 @@
         "break"
 
         # NETWORK (L'icône NerdFont 󰩟 prend aussi plus d'octets)
-        { type = "custom"; key = " 🌐 Network"; keyColor = "cyan"; }
+        { type = "custom"; format = " 🌐 Network"; outputColor = "cyan"; }
         { type = "localip"; key = " ├── 󰩟  Local IP    "; keyColor = "cyan"; showIpv4 = true; showIpv6 = false; }
         { type = "dns"; key = " └── 󰒋  DNS         "; keyColor = "cyan"; }
         "break"
 
         # DEVELOPMENT
-        { type = "custom"; key = " 🦫 Development"; keyColor = "magenta"; }
+        { type = "custom"; format = " 🦫 Development"; outputColor = "magenta"; }
         { type = "uptime"; key = " └── 󰔚  Uptime      "; keyColor = "magenta"; }
         "break"
         "colors"
