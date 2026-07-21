@@ -30,7 +30,9 @@
         { type = "kernel"; key = " ├── ⚙️  Kernel              "; keyColor = "yellow"; }
         { type = "shell"; key = " ├── 🐚 Shell               "; keyColor = "yellow"; }
         { type = "terminal"; key = " ├── 💻 Terminal            "; keyColor = "yellow"; }
-        { type = "packages"; key = " └── 📦 Packages            "; keyColor = "yellow"; }
+        { type = "packages"; key = " ├── 📦 Packages            "; keyColor = "yellow"; }
+	{ type = "wm"; key = " ├── 🪟 WM                  "; keyColor = "yellow"; }
+	{ type = "command"; key = " └── 🌤️  Météo               "; keyColor = "yellow"; text = "curl -s 'wttr.in/Aulnay-sous-Bois?format=%c+%t'"; }
         "break"
 
         # HARDWARE (Les emojis 🧠/🎮/📺 font 4 octets UTF-8, on retire 1 ou 2 espaces pour compenser)
