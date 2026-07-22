@@ -160,6 +160,7 @@
     gnomeExtensions.appindicator
     headsetcontrol
     gnomeExtensions.headsetcontrol
+    ollama
   ];
 
   services.flatpak.enable = true;
