@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "viiper";
@@ -59,6 +59,10 @@
       ];
     };
   };
+
+  home.packages = [
+    inputs.concord.packages.${pkgs.system}.default
+  ];
 
   programs.home-manager.enable = true;
 }
