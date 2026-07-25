@@ -160,7 +160,7 @@
     gnomeExtensions.appindicator
     headsetcontrol
     gnomeExtensions.headsetcontrol
-    ollama
+    ollama-rocm
   ];
 
   services.flatpak.enable = true;
@@ -188,6 +188,10 @@
         Option "ScrollFactor" "2.5"
       '';
     };
+  };
+
+  environment.sessionVariables = {
+    HSA_OVERRIDE_GFX_VERSION = "12.0.1";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
