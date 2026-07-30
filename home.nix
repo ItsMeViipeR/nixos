@@ -64,11 +64,70 @@
     enable = true;
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
+    autocd = true;
 
     shellAliases = {
       c = "clear";
       eza = "eza --ignore-glob=\"target|.git|node_modules|dist|build\" --icons --group-directories-first --git --git-ignore --color=always --header --time-style=long-iso";
     };
+
+    initContent = ''
+      export DIRENV_LOG_FORMAT=""
+      
+      countdown() {
+        local cible="$1"
+        local jours=$(( ( $(date -d "$cible" +%s) - $(date +%s) ) / 86400 ))
+        echo "Il reste ''${jours} jours avant le ''${cible}."
+      }
+
+      weather() {
+        curl -s "wttr.in/''${1}?format=%c+%t"
+        echo ""
+      }
+
+      mkcd() {
+        mkdir -p "$1" && cd "$1"
+      }
+
+      initNixGo() {
+        cat <<'EOF' > flake.nix
+{
+  description = "Environnement de dev Go";
+
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+
+  outputs =
+    { nixpkgs, ... }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.''${system};
+    in
+    {
+      devShells.''${system}.default = pkgs.mkShell {
+        nativeBuildInputs = with pkgs; [
+          git
+          go
+          gopls
+          air
+        ];
+
+        shellHook = \'\'
+          export GOBIN=$PWD/.bin
+          export PATH=$GOBIN:$PATH
+
+          mkdir -p $GOBIN
+        \'\';
+      };
+    };
+}
+EOF
+        cat <<'EOF' > .envrc
+use flake
+EOF
+        echo "flake.nix généré avec succès !"
+        direnv allow
+      }
+    '';
   };
 
   home.packages = [
