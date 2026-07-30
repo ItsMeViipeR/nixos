@@ -60,6 +60,17 @@
     };
   };
 
+  programs.zsh = {
+    enable = true;
+    syntaxHighlighting.enable = true;
+    autosuggestion.enable = true;
+
+    shellAliases = {
+      c = "clear";
+      eza = "eza --ignore-glob=\"target|.git|node_modules|dist|build\" --icons --group-directories-first --git --git-ignore --color=always --header --time-style=long-iso";
+    };
+  };
+
   home.packages = [
     inputs.concord.packages.${pkgs.system}.default
   ];

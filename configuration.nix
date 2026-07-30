@@ -95,15 +95,7 @@
     options = "--delete-older-than 7d";
   };
 
-  programs.zsh = {
-    enable = true;
-    enableSyntaxHighlighting = true;
-    autosuggestions.enable = true;
-    shellAliases = {
-      ns = "nix-shell";
-      c = "clear";
-    };
-  };
+  programs.zsh.enable = true;
 
   programs.starship.enable = true;
 
