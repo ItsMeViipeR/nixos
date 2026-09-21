@@ -8,8 +8,6 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    concord.url = "github:chojs23/concord";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {

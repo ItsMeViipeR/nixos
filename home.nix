@@ -89,50 +89,10 @@
       mkcd() {
         mkdir -p "$1" && cd "$1"
       }
-
-      initNixGo() {
-        cat <<'EOF' > flake.nix
-{
-  description = "Environnement de dev Go";
-
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
-
-  outputs =
-    { nixpkgs, ... }:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.''${system};
-    in
-    {
-      devShells.''${system}.default = pkgs.mkShell {
-        nativeBuildInputs = with pkgs; [
-          git
-          go
-          gopls
-          air
-        ];
-
-        shellHook = \'\'
-          export GOBIN=$PWD/.bin
-          export PATH=$GOBIN:$PATH
-
-          mkdir -p $GOBIN
-        \'\';
-      };
-    };
-}
-EOF
-        cat <<'EOF' > .envrc
-use flake
-EOF
-        echo "flake.nix généré avec succès !"
-        direnv allow
-      }
     '';
   };
 
   home.packages = [
-    inputs.concord.packages.${pkgs.system}.default
     pkgs.zerotierone
     pkgs.owmods-gui
     pkgs.blender
