@@ -69,6 +69,7 @@
     shellAliases = {
       c = "clear";
       eza = "eza --ignore-glob=\"target|.git|node_modules|dist|build\" --icons --group-directories-first --git --git-ignore --color=always --header --time-style=long-iso";
+      z = "zeditor";
     };
 
     initContent = ''
@@ -132,6 +133,9 @@ EOF
 
   home.packages = [
     inputs.concord.packages.${pkgs.system}.default
+    pkgs.zerotierone
+    pkgs.owmods-gui
+    pkgs.blender
   ];
 
   programs.home-manager.enable = true;

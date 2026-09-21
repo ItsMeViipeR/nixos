@@ -110,6 +110,11 @@
     ];
   };
 
+  virtualisation.waydroid.enable = true;
+  virtualisation.waydroid.package = pkgs.waydroid-nftables;
+
+  nix.settings.trusted-users = [ "root" "viiper" ];
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -153,6 +158,7 @@
     headsetcontrol
     gnomeExtensions.headsetcontrol
     ollama-rocm
+    wl-clipboard
   ];
 
   services.flatpak.enable = true;
@@ -180,6 +186,13 @@
         Option "ScrollFactor" "2.5"
       '';
     };
+  };
+
+  services.zerotierone = {
+    enable = true;
+    joinNetworks = [
+      "154a350c8634ba0d"
+    ];
   };
 
   environment.sessionVariables = {
