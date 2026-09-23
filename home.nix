@@ -6,6 +6,13 @@
 
   home.stateVersion = "26.05"; 
 
+  wayland.windowManager.hyprland = {
+    enable = true;
+    systemd.enable = false;
+  };
+
+  imports = [ ./waybar.nix ];
+
   programs.fastfetch = {
     enable = true;
     settings = {
@@ -96,6 +103,11 @@
     pkgs.zerotierone
     pkgs.owmods-gui
     pkgs.blender
+    pkgs.kitty
+    pkgs.hyprlauncher
+    pkgs.hyprpaper
+    pkgs.nautilus
+    pkgs.hyprshot
   ];
 
   programs.home-manager.enable = true;
